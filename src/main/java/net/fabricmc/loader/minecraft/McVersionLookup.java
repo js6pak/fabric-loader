@@ -165,6 +165,10 @@ public final class McVersionLookup {
 		int pos = name.lastIndexOf('.');
 		if (pos > 0) name = name.substring(0, pos);
 
+		for (String s : name.split("-")) {
+			if(isProbableVersion(s)) return new McVersion(s, getRelease(s));
+		}
+
 		return new McVersion(name, getRelease(name));
 	}
 
