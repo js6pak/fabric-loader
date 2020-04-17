@@ -148,7 +148,7 @@ public final class BuiltinModMetadata extends AbstractModMetadata {
 			this.name = this.id = id;
 
 			try {
-				this.version = VersionDeserializer.deserializeSemantic(version);
+				this.version = VersionDeserializer.deserialize(version);
 			} catch (VersionParsingException e) {
 				throw new RuntimeException(e);
 			}
